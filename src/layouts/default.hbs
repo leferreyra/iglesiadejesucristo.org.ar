@@ -10,11 +10,117 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css" />
     <link rel="stylesheet" href="{{assets}}/css/ij.css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
 
   </head>
   <body>
 
-    {{>body}}
+    <!--
+        Facebook SDK
+    -->
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=831242166949496";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <header>
+        <div class="container">
+            <nav class="top-bar">
+
+                <a href="/">
+                    <img src="{{assets}}/img/logo.png" alt="Iglesia de Jesucristo" class="top-bar-logo">
+                </a>
+
+                <ul class="top-bar-menu">
+                    <li><a href="#">IGLESIA</a></li>
+                    <li><a href="#">MEDIOS</a></li>
+                    <li><a href="#">HORARIOS</a></li>
+                    <li><a href="#">CONTACTO</a></li>
+                </ul>
+
+                <div class="radio-player-wrapper"></div>
+
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-inner">
+
+            <h1>Fundacion Iglesia de Jesucristo</h1>
+            <h2>Sirviendo con pasion por la gente</h2>
+
+            <a href="/iglesia" class="button">conocer mas</a>
+
+        </div>
+
+    </section>
+
+    <section class="clearfix">
+        <div class="agenda half-width">
+            <div class="inner">
+                <i class="fa fa-clock-o"></i>
+                <p>
+                    Ver la agenda de servicios y 
+                    reuniones de la iglesia. Tambien
+                    horarios de programas de TV y radio.
+                </p>
+                <a href="/agenda" class="button">ver horarios</a>
+            </div>
+        </div>
+        <div class="contacto half-width">
+            <div class="inner">
+                <i class="fa fa-map-signs"></i>
+                <p>
+                    Acercate a conocernos. Ver
+                    como llegar a nuestro complejo
+                    y nuestra informacion de contacto.
+                </p>
+                <a href="/agenda" class="button">como llegar</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="social">
+
+            <span>
+                Mantente informado de todas las novedades, siguenos en Facebook.
+            </span>
+
+            <div
+                 class="fb-like"
+                 data-href="https://www.facebook.com/iglesiadejesucristofb"
+                 data-layout="button_count"
+                 data-action="like"
+                 data-show-faces="false"
+                 data-share="false"></div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <span>
+                ©2016 Fundacion Iglesia de Jesucristo
+            </span>
+            <ul>
+                <li><a href="#">Iglesia</a></li>
+                <li><a href="#">Medios</a></li>
+                <li><a href="#">Horarios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <script src="{{assets}}/js/ij.js"></script>
 

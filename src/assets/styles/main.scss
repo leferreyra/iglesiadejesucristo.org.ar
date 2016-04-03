@@ -1,2 +1,322 @@
 
+$assets: "../";
 
+$gray: gray;
+$dark-gray: #333;
+$white: white;
+$orange: #F36D3A;
+$yellow: #D0991B;
+
+$top-bar-height: 70px;
+$top-bar-padding: 10px;
+
+
+/*
+Estilos generales
+=================
+*/
+
+body {
+    font-family: "Open Sans", Helvetica, Arial;
+}
+
+button {
+    outline: none;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*
+Boton
+=====
+*/
+
+.button, button {
+
+    background: none;
+    border: 2px solid;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+/*
+Top Bar
+=======
+*/
+
+.top-bar {
+    height: $top-bar-height;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.top-bar-logo {
+    max-height: calc(100% - (#{$top-bar-padding} * 2));
+    padding: $top-bar-padding 0;
+    float: left;
+}
+
+.top-bar-menu {
+
+    list-style: none;
+    float: left;
+    padding: 0;
+    margin: 0 0 0 20px;
+
+    li {
+        display: inline;
+        margin: 0 5px;
+        font-size: 14px;
+
+        a {
+            color: $gray;
+            display: inline-block;
+            height: $top-bar-height;
+            line-height: $top-bar-height;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+}
+
+
+/*
+Hero
+====
+*/
+
+.hero {
+
+    position: relative;
+    background-image: url('#{$assets}/img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: $white;
+
+    a {
+        color: $white;
+
+        &:hover {
+            color: $orange;
+            border-color: $orange;
+        }
+    }
+
+    h1, h2 {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: lighter;
+    }
+
+    .button {
+        margin-top: 30px;
+    }
+
+    .hero-inner {
+        padding: 200px 20px;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 10;
+    }
+}
+
+
+/*
+Hero
+====
+*/
+
+.half-width {
+
+    width: 50%;
+    float: left;
+    font-size: 30px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: $white;
+
+    a {
+        color: $white;
+        font-size: 16px;
+
+        &:hover {
+            color: darken($white, 20);
+            border-color: darken($white, 20);
+        }
+    }
+
+    i {
+        font-size: 40px;
+    }
+
+    p {
+        margin-top: 5px;
+    }
+
+    .inner {
+        padding: 50px;
+    }
+
+    &.agenda {
+        background-image: url('#{$assets}/img/alabanza.jpg');
+
+        .inner {
+            background-color: rgba($orange, 0.8);
+        }
+    }
+
+    &.contacto {
+        background-image: url('#{$assets}/img/musica.jpg');
+
+        .inner {
+            background-color: rgba($yellow, 0.8);
+        }
+    }
+
+}
+
+
+/*
+Social call
+===========
+*/
+
+.social {
+
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    background-color: darken($white, 10);
+    color: $gray;
+
+    .fb-like {
+        margin-left: 10px;
+        top: -3px;
+    }
+}
+
+
+
+/*
+Footer
+======
+*/
+
+footer {
+
+    padding: 20px 0;
+    font-size: 14px;
+
+    a {
+        color: $gray;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+        float: right;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: inline;
+            margin-right: 16px;
+        }
+    }
+}
+
+
+/*
+Radio player
+============
+*/
+
+.radio-player-wrapper {
+
+    float: right;
+
+    &.radio-popup {
+
+        float: left;
+        width: 100%;
+
+        .radio-player {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.radio-player-init {
+
+    border: 0;
+    padding: 0;
+    line-height: $top-bar-height;
+    background-image: url('#{$assets}/img/radio.jpg');
+    background-repeat: no-repeat;
+    background-size: 40px auto;
+    background-position: center left;
+    padding-left: 50px;
+    color: $gray;
+}
+
+.radio-player {
+
+    height: $top-bar-height;
+    background: $dark-gray;
+    padding: 0 20px;
+    color: $white;
+
+    button {
+        width: 40px;
+        color: $white;
+        border: 0;
+        height: 100%;
+        padding: 10px;
+    }
+
+    .slider {
+        height: 2px;
+        width: 100px;
+        display: inline-block;
+        background-color: $gray;
+        top: -4px;
+        margin-right: 10px;
+
+        .handle {
+            top: -4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: $white;
+            cursor: pointer;
+            cursor: grab;
+        }
+    }
+}
