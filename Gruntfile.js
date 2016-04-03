@@ -119,6 +119,21 @@ module.exports = function(grunt) {
             bsFiles: {
                 src: "dist/**/*"
             }
+        },
+
+        buildcontrol: {
+            options: {
+                dir: "dist",
+                commit: true,
+                push: true,
+                message: "Deploy de commit %sourceCommit% en branch %sourceBranch%"
+            },
+            pages: {
+                options: {
+                    remote: "git@github.com:iglesiadejesucristo/iglesiadejesucristo.github.io.git",
+                    branch: "master"
+                }
+            }
         }
 
     });
@@ -131,8 +146,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-browser-sync");
+    grunt.loadNpmTasks("grunt-build-control");
+
+    grunt.registerTask('deploy', ["buildcontrol"]);
 
     grunt.registerTask('build', ["assemble", "sass", "babel", "uglify", "imagemin", "copy"]);
+
     grunt.registerTask('default', ["build", "browserSync", "watch"]);
 
 };
