@@ -1,0 +1,76 @@
+
+{
+    "recurrentes": [
+        {
+            "nombre": "Servicio general",
+            "descripcion": "Venga al culto y escuche la palabra del Señor",
+            "hora": {
+                "inicio": "19:30",
+                "fin": "21:00"
+            },
+            "dias": ["MAR", "JUE", "VIE", "SAB"],
+            "tipos": ["tv", "radio", "reunion"]
+        },
+        {
+            "nombre": "Servicio general",
+            "descripcion": "Venga al culto y escuche la palabra del Señor",
+            "hora": {
+                "inicio": "9:00",
+                "fin": "11:00"
+            },
+            "dias": ["DOM"],
+            "tipos": ["tv", "radio", "reunion"]
+        },
+        {
+            "nombre": "Servicio general",
+            "descripcion": "Venga al culto y escuche la palabra del Señor",
+            "hora": {
+                "inicio": "19:00",
+                "fin": "21:00"
+            },
+            "dias": ["DOM"],
+            "tipos": ["tv", "radio", "reunion"]
+        },
+        {
+            "nombre": "Reunion de Jovenes",
+            "descripcion": "Es como el servicio general pero con jovenes y no tan jovenes :P",
+            "hora": {
+                "inicio": "20:00",
+                "fin": "22:00"
+            },
+            "dias": ["LUN"],
+            "tipos": ["tv", "radio", "reunion"]
+        },
+        {
+            "nombre": "Discipulado (noche)",
+            "descripcion": "Venga y pregunte sus dudas",
+            "hora": {
+                "inicio": "20:00",
+                "fin": "21:00"
+            },
+            "dias": ["MIE"],
+            "tipos": ["tv", "radio", "reunion"]
+        }, {
+            "nombre": "Discipulado (mediodia)",
+            "descripcion": "Venga y pregunte sus dudas",
+            "hora": {
+                "inicio": "13:00",
+                "fin": "14:00"
+            },
+            "dias": ["MIE"],
+            "tipos": ["tv", "radio", "reunion"]
+        }
+    ],
+    "unicos": [
+        {
+            "nombre": "Evento Unico :D",
+            "descripcion": "Este evento esta solo el 20 de abril",
+            "hora": {
+                "inicio": "13:00",
+                "fin": "14:00"
+            },
+            "dia": "20/04/2016",
+            "tipos": ["tv", "radio", "reunion"]
+        }
+    ]
+}

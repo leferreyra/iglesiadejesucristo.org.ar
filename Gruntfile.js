@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
         assemble: {
             options: {
+                agenda_data: JSON.stringify(grunt.file.readJSON('src/data/agenda.json')),
                 flatten: true,
                 assets: 'dist/assets',
                 partials: ['src/includes/*.hbs'],
@@ -13,14 +14,14 @@ module.exports = function(grunt) {
                 data: ['src/data/*.{json,yml}']
             },
             pages: {
-                src: 'src/pages/index.hbs',
+                src: 'src/pages/*.hbs',
                 dest: 'dist/'
             },
             popups: {
                 options: {
                     layout: 'popup.hbs'
                 },
-                src: 'src/pages/*-popup.hbs',
+                src: 'src/popups/*.hbs',
                 dest: 'dist/'
             }
         },
@@ -45,6 +46,7 @@ module.exports = function(grunt) {
             js: {
                 files: {
                     'dist/assets/js/ij.js': [
+                        "node_modules/underscore/underscore-min.js",
                         "node_modules/react/dist/react-with-addons.min.js",
                         "node_modules/react-dom/dist/react-dom.min.js",
                         "node_modules/classnames/index.js",
@@ -89,7 +91,7 @@ module.exports = function(grunt) {
         watch: {
             assemble: {
                 files: ['src/**/*.hbs'],
-                tasks: ['build']
+                tasks: ['assemble']
             },
             sass: {
                 files: ['src/assets/**/*.scss'],
@@ -106,6 +108,10 @@ module.exports = function(grunt) {
             images: {
                 files: ['src/assets/img/**/*'],
                 tasks: ['imagemin']
+            },
+            data: {
+                files: ['src/data/**/*'],
+                tasks: ['assemble']
             }
         },
 

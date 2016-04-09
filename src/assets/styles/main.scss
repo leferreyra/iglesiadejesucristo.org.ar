@@ -6,6 +6,7 @@ $dark-gray: #333;
 $white: white;
 $orange: #F36D3A;
 $yellow: #D0991B;
+$light-yellow: #FDE335;
 
 $top-bar-height: 70px;
 $top-bar-padding: 10px;
@@ -320,3 +321,93 @@ Radio player
         }
     }
 }
+
+
+/*
+Agenda
+======
+*/
+
+.agenda {
+    background-color: darken($white, 5);
+
+    .days {
+        padding: 50px 0;
+    }
+
+    .day {
+        width: 300px;
+        float: left;
+
+        .day-name {
+            color: $orange;
+            font-size: 120px;
+            font-weight: 600;
+            line-height: 0.8;
+            display: block;
+            clear: both;
+        }
+
+        .day-number {
+            font-size: 30px;
+            margin-left: 10px;
+        }
+
+        .hoy {
+            background: $light-yellow;
+            color: black;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 0 10px;
+            position: relative;
+            top: -3px;
+            left: 5px;
+        }
+    }
+
+    .events {
+
+        width: calc(100% - 350px);
+        float: right;
+
+        .event {
+            color: $gray;
+            padding: 20px 0;
+            border-top: 1px solid darken($white, 20);
+            overflow: hidden;
+
+            .time {
+                width: 120px;
+                float: left;
+                font-size: 35px;
+                line-height: 0.9;
+                color: lighten($gray, 20);
+            }
+
+            .info {
+                float: left;
+                width: 500px;
+            }
+
+            h3 {
+                font-weight: lighter;
+                font-size: 40px;
+                margin: 0;
+                line-height: 0.8;
+                color: black;
+            }
+
+            .tipos {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    display: inline;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
