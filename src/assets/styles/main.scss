@@ -409,5 +409,42 @@ Agenda
             }
         }
     }
+
+    .filters {
+
+        color: $white;
+        background-color: lighten(black, 30);
+        padding: 20px 0;
+
+        .filtrar-label {
+            margin-right: 50px;
+            margin-left: 10px;
+            color: darken(white, 20);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            li {
+
+                input {
+                    margin-right: 5px;
+                    outline: none;
+                }
+
+                label {
+                    cursor: pointer;
+                }
+
+                display: inline;
+                margin-right: 20px;
+            }
+        }
+    }
 }
 

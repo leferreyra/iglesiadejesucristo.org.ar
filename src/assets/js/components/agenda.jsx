@@ -26,6 +26,12 @@ var MONTH_NAMES = [
 
 var Agenda = React.createClass({
 
+    getInitialState: function() {
+        return {
+            filters: ['tv', 'radio', 'youtube', 'reunion']
+        };
+    },
+
     _getDayEvents: function(date) {
 
         var recurrent = this.props.agenda.recurrentes;
@@ -43,14 +49,17 @@ var Agenda = React.createClass({
                     var month = parseInt(_dia[1]) - 1;
                     var year = parseInt(_dia[2]);
 
-                    console.log(date.toDateString(), (new Date(year, month, day)).toDateString());
-
                     return date.toDateString() ===
                         (new Date(year, month, day)).toDateString();
                 }
 
                 return event.dias.indexOf(DAY_NAMES[date.getDay()]) !== -1;
             })
+            .filter(function(event) {
+                return _.some(event.tipos, function(tipo){
+                    return this.state.filters.indexOf(tipo) !== -1;
+                }, this);
+            }, this)
             .map(function(event){
 
                 var time = event.hora.inicio.split(":");
@@ -72,12 +81,14 @@ var Agenda = React.createClass({
 
     _getDay: function(date) {
 
-        return {
+        var dayEvents = this._getDayEvents(date);
+
+        return dayEvents.length ? {
             name: DAY_NAMES[date.getDay()],
             date: date.getDate() + " " + MONTH_NAMES[date.getMonth()],
             isToday: date.toDateString() === (new Date()).toDateString(),
-            events: this._getDayEvents(date)
-        };
+            events: dayEvents
+        } : null;
     },
 
     _getAgenda: function() {
@@ -88,6 +99,9 @@ var Agenda = React.createClass({
                 date.setDate(date.getDate() + d);
                 return this._getDay(date);
             }, this)
+            .filter(function(day) {
+                return !_.isNull(day);
+            })
             .value();
     },
 
@@ -108,9 +122,9 @@ var Agenda = React.createClass({
         }[type];
 
         return (
-            <li>
+            <span>
                 <i className={typeClasses}></i> {typeName}
-            </li>
+            </span>
         );
 
     },
@@ -131,7 +145,11 @@ var Agenda = React.createClass({
                     </p>
                     <ul className="tipos">
                         {event.tipos.map(function(type){
-                            return this._renderEventType(type);
+                            return (
+                                <li>
+                                    {this._renderEventType(type)}
+                                </li>
+                            );
                         }.bind(this))}
                     </ul>
                 </div>
@@ -168,13 +186,49 @@ var Agenda = React.createClass({
 
     },
 
+    _onFilterChange: function(filter) {
+
+        var filters = this.state.filters;
+
+        if (filters.indexOf(filter) !== -1) {
+            filters = _.without(filters, filter);
+        } else {
+            filters.push(filter);
+        }
+
+        this.setState({
+            filters: filters
+        });
+    },
+
     render: function() {
 
         return (
 
             <div className="agenda">
             
-                <div className="filters"></div>
+                <div className="filters">
+                    <ul className="container">
+                        <li className="filtrar-label">
+                            Filtrar eventos
+                        </li>
+                        {['tv', 'radio', 'reunion', 'youtube'].map(function(type){
+                            return (
+                                <li>
+                                    <label>
+                                        <input type="checkbox"
+                                            checked={
+                                                this.state.filters.indexOf(type) !== -1
+                                            }
+                                            onClick={this._onFilterChange.bind(this, type)}/>
+
+                                        {this._renderEventType(type)}
+                                    </label>
+                                </li>
+                            );
+                        }.bind(this))}
+                    </ul>
+                </div>
 
                 <div className="days">
                     <div className="container">
