@@ -226,6 +226,11 @@ Social call
     background-color: darken($white, 10);
     color: $gray;
 
+    a {
+      color: $orange;
+      text-decoration: none;
+    }
+
     .fb-like {
         margin-left: 10px;
         top: -3px;
