@@ -25,6 +25,16 @@ button {
     outline: none;
 }
 
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: lighter;
+}
+
+strong {
+  font-family: "Open Sans", Helvetica, Arial;
+  font-weight: 600;
+}
+
 .clearfix {
     overflow: hidden;
 }
@@ -448,3 +458,31 @@ Agenda
     }
 }
 
+/*
+Iglesia
+=======
+*/
+
+.iglesia {
+  margin-bottom: 40px;
+  p {
+    font-size: 20px;
+  }
+}
+
+/*
+Contacto
+========
+*/
+
+.contacto-seccion {
+  background-color: #f1f1f1;
+  padding: 10px 0;
+  p {
+    font-size: 20px;
+  }
+}
+
+.mapa {
+  pointer-events: none;
+}

@@ -39,7 +39,7 @@ var Agenda = React.createClass({
 
         return _.chain(recurrent.concat(once))
             .filter(function(event){
-                   
+
                 // para eventos unicos
                 if (event.dia) {
 
@@ -130,7 +130,7 @@ var Agenda = React.createClass({
     },
 
     _renderEvent: function(event) {
-                
+
         return (
             <div className="event">
                 <div className="time">
@@ -206,13 +206,13 @@ var Agenda = React.createClass({
         return (
 
             <div className="agenda">
-            
+
                 <div className="filters">
                     <ul className="container">
                         <li className="filtrar-label">
                             Filtrar eventos
                         </li>
-                        {['tv', 'radio', 'reunion', 'youtube'].map(function(type){
+                        {['tv', 'radio', 'reunion'].map(function(type){
                             return (
                                 <li>
                                     <label>
