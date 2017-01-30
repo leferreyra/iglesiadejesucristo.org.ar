@@ -4,9 +4,7 @@
 
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!--
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Fundacion Iglesia de Jesucristo</title>
 
@@ -25,33 +23,33 @@
     <div id="fb-root"></div>
     <script>
         (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=831242166949496";
-            fjs.parentNode.insertBefore(js, fjs);
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=563428290511035";
+        fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
     <header>
-        <div class="container">
-            <nav class="top-bar">
+        <nav class="top-bar">
 
-                <a href="/">
-                    <img src="{{assets}}/img/logo.png" alt="Iglesia de Jesucristo" class="top-bar-logo">
-                </a>
+            <a href="/">
+                <img src="{{assets}}/img/logo.png" alt="Iglesia de Jesucristo" class="top-bar-logo">
+            </a>
 
-                <ul class="top-bar-menu">
-                    <li><a href="iglesia.html">IGLESIA</a></li>
-                    <li><a href="horarios.html">HORARIOS</a></li>
-                    <li><a href="contacto.html">CONTACTO</a></li>
-                </ul>
+            <ul class="top-bar-menu">
+                <li><a href="iglesia.html">IGLESIA</a></li>
+                <li><a href="horarios.html">HORARIOS</a></li>
+                <li><a href="tv.html">TV</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="contacto.html">PEDIDOS DE ORACION</a></li>
+                <li><a href="contacto.html">PREGUNTAS DISCIPULADO</a></li>
+            </ul>
 
-                <div class="radio-player-wrapper"></div>
+            <div class="radio-player-wrapper"></div>
 
-            </nav>
-
-        </div>
+        </nav>
     </header>
 
     {{>body}}
@@ -59,33 +57,49 @@
     <section class="social">
 
             <span>
-                Mantente informado de todas las novedades, sigue <a href="https://www.facebook.com/iglesiadejesucristofb" target="_blank">nuestra pagina de Facebook</a>.
+                <a href="https://www.facebook.com/iglesiadejesucristofb" target="_blank">Seguinos en Facebook</a>
             </span>
 
             <div
-                 class="fb-like"
-                 data-href="https://www.facebook.com/iglesiadejesucristofb"
-                 data-layout="button_count"
-                 data-action="like"
-                 data-show-faces="false"
-                 data-share="false"></div>
+                class="fb-like"
+                data-href="https://web.facebook.com/iglesiadejesucristofb/"
+                data-layout="button_count"
+                data-action="like"
+                data-size="large"
+                data-show-faces="false"
+                data-share="false">
+            </div>
 
     </section>
 
     <footer>
         <div class="container">
             <span>
-                ©2016 Fundacion Iglesia de Jesucristo
+                ©2017 Fundacion Iglesia de Jesucristo
             </span>
             <ul>
                 <li><a href="iglesia.html">Iglesia</a></li>
                 <li><a href="horarios.html">Horarios</a></li>
+                <li><a href="tv.html">Tv</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
     </footer>
 
     <script src="{{assets}}/js/ij.js"></script>
+
+    <!--
+        Google Analytics
+    -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-91051236-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 
   </body>
 </html>

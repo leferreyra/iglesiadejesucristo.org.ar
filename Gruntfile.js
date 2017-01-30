@@ -154,7 +154,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-browser-sync");
     grunt.loadNpmTasks("grunt-build-control");
 
-    grunt.registerTask('deploy', ["buildcontrol"]);
+    grunt.registerTask('deploy-gh', ["buildcontrol"]);
 
     grunt.registerTask('build', ["assemble", "sass", "babel", "uglify", "imagemin", "copy"]);
 

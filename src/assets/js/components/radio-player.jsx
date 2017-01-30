@@ -54,13 +54,14 @@ var RadioPlayer = React.createClass({
             }.bind(this)
         });
 
+        $(document.body).addClass('radio-initialized');
     },
 
     _renderUninitialized: function() {
 
         return (
             <button className="radio-player-init" onClick={this._initializePlayer}>
-                Escuchar la radio en vivo
+                <span>Escuchar la radio en vivo</span>
             </button>
         );
 
