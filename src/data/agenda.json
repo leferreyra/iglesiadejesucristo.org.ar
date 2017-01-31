@@ -59,6 +59,15 @@
             },
             "dias": ["MIE"],
             "tipos": ["tv", "radio", "reunion"]
+        }, {
+            "nombre": "Ensayo Ministerio de Alabanza",
+            "descripcion": "",
+            "hora": {
+                "inicio": "10:00",
+                "fin": "11:00"
+            },
+            "dias": ["SAB"],
+            "tipos": ["reunion"]
         }
     ],
     "unicos": [

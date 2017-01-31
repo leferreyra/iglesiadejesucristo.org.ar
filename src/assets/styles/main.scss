@@ -12,6 +12,8 @@ $light-yellow: #FDE335;
 $top-bar-height: 70px;
 $top-bar-padding: 10px;
 
+$light-gray-border: 1px solid darken(white, 20);
+
 
 /*
 Estilos generales
@@ -168,7 +170,7 @@ $menu-break-width: 710px;
         background-color: transparentize(black, 0.2);
         z-index: 2000;
         display: none;
-        
+
         li {
             font-size: 40px;
             text-align: center;
@@ -277,6 +279,7 @@ Half width
 
 .half-width {
 
+    background-color: lighten(black, 10);
     width: 50%;
     float: left;
     font-size: 24px;
@@ -344,6 +347,79 @@ Half width
 
 }
 
+/*
+Forms and Social
+================
+*/
+
+$forms-and-social-break-width: 785px;
+
+.forms-and-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: $forms-and-social-break-width) {
+    display: block;
+  }
+}
+
+.forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+
+  a {
+    text-decoration: none;
+    color: gray;
+
+    &:hover {
+      color: #03a9f4;
+    }
+  }
+
+  .fa {
+    font-size: 60px;
+    color: #03a9f4;
+    margin-right: 20px;
+  }
+
+  ul {
+    list-style: none;
+    font-size: 20px;
+    margin: 20px;
+    padding: 0;
+
+    li {
+      padding: 10px 0;
+      border-bottom: $light-gray-border;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: $forms-and-social-break-width) {
+
+    display: block;
+    padding: 20px;
+
+    .fa {
+      display: block;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 40px;
+    }
+
+    ul {
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+}
+
 
 /*
 Social call
@@ -354,10 +430,9 @@ Social call
 
     padding: 30px;
     font-size: 20px;
-    text-align: center;
-    background-color: darken($white, 10);
     color: $gray;
     line-height: 1.5em;
+    border-left: $light-gray-border;
 
     a {
       color: $gray;
@@ -365,7 +440,16 @@ Social call
     }
 
     .fb-like {
-        margin-left: 10px;
+      margin-top: 10px;
+      display: block;
+    }
+
+    @media screen and (max-width: $forms-and-social-break-width) {
+      padding: 20px;
+
+      border-left: 0;
+      border-top: $light-gray-border;
+      text-align: center;
     }
 }
 
@@ -380,6 +464,7 @@ footer {
 
     padding: 20px 0;
     font-size: 14px;
+    background-color: darken(white, 10);
 
     a {
         color: $gray;
