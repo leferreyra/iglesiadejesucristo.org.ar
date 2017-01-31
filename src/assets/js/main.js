@@ -18,4 +18,10 @@ $(document).ready(function() {
             }), $agendaWrapper.get(0));
     }
 
+
+    // Mobile menu
+    $('.mobile-menu-button, .close-mobile-menu').click(function(){
+        $(document.body).toggleClass('mobile-menu-open');
+    });
+
 });
