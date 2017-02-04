@@ -10,7 +10,8 @@ var RadioPlayer = React.createClass({
             initialized: false,
             playing: false,
             muted: false,
-            volume: 80
+            volume: 80,
+            error: false
         };
     },
 
@@ -29,9 +30,11 @@ var RadioPlayer = React.createClass({
                 mp3: STREAM_SERVER
             }).jPlayer("play");
 
-        } else {
+            this._track('play');
 
+        } else {
             this.el.jPlayer("clearMedia");
+            this._track('stop');
         }
 
         this.el.jPlayer("volume", this.state.volume / 100);
@@ -44,6 +47,7 @@ var RadioPlayer = React.createClass({
         $("body").append(this.el);
 
         this.el.jPlayer({
+
             ready: function() {
 
                 this.setState({
@@ -51,7 +55,19 @@ var RadioPlayer = React.createClass({
                     playing: true
                 });
 
+            }.bind(this),
+
+            error: function(error) {
+                if (!this.state.error) {
+                    this.setState({
+                        error: true
+                    });
+                    ga('send', 'exception', {
+                        exDescription: 'Radio failed: ' + error.jPlayer.error.message
+                    });
+                }
             }.bind(this)
+
         });
 
         $(document.body).addClass('radio-initialized');
@@ -82,6 +98,15 @@ var RadioPlayer = React.createClass({
             'fa-volume-down': volume > 0 && volume <= 50 && !muted,
             'fa-volume-off': volume === 0 || this.state.muted
         });
+
+        if (this.state.error) {
+            return (
+                <div className="radio-player error">
+                    <i className="fa fa-exclamation-triangle"></i>
+                    <span>La radio esta teniendo problemas, por favor intente mas tarde.</span>
+                </div>
+            );
+        }
         
         return (
             <div className="radio-player">
@@ -136,6 +161,10 @@ var RadioPlayer = React.createClass({
         this.setState({
             playing: false
         });
+    },
+
+    _track(eventAction, eventLabel) {
+        ga('send', 'event', 'Radio', eventAction, eventLabel);
     },
 
     render: function() {

@@ -588,6 +588,15 @@ $radio-break-width: 460px;
             cursor: grab;
         }
     }
+
+    &.error {
+        max-width: 250px;
+        font-size: 14px;
+        .fa {
+            font-size: 20px;
+            margin-right: 15px;
+        }
+    }
 }
 
 
