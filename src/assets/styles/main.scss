@@ -70,7 +70,7 @@ Top Bar
 =======
 */
 
-$menu-break-width: 760px;
+$menu-break-width: 770px;
 
 .top-bar {
 
@@ -596,7 +596,12 @@ $radio-break-width: 460px;
             font-size: 20px;
             margin-right: 15px;
         }
+
+        @media screen and (max-width: $radio-break-width) {
+            max-width: initial;
+        }
     }
+
 }
 
 

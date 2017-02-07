@@ -22,19 +22,21 @@ var RadioPlayer = React.createClass({
         }
     },
 
-    componentDidUpdate: function() {
+    componentDidUpdate: function(prevProps, prevState) {
 
-        if (this.state.playing) {
+        if (prevState.playing !== this.state.playing) {
+            if (this.state.playing) {
 
-            this.el.jPlayer("setMedia", {
-                mp3: STREAM_SERVER
-            }).jPlayer("play");
+                this.el.jPlayer("setMedia", {
+                    mp3: STREAM_SERVER
+                }).jPlayer("play");
 
-            this._track('play');
+                this._track('play');
 
-        } else {
-            this.el.jPlayer("clearMedia");
-            this._track('stop');
+            } else {
+                this.el.jPlayer("clearMedia");
+                this._track('stop');
+            }
         }
 
         this.el.jPlayer("volume", this.state.volume / 100);
