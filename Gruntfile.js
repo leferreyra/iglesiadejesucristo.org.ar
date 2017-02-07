@@ -85,6 +85,14 @@ module.exports = function(grunt) {
                 files: {
                     'dist/assets/flash/jquery.jplayer.swf': 'node_modules/jplayer/dist/jplayer/jquery.jplayer.swf'
                 }
+            },
+            filez: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/',
+                    src: 'assets/files/**/*',
+                    dest: 'dist'
+                }]
             }
         },
 

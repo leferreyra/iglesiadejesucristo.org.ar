@@ -6,6 +6,7 @@ $dark-gray: #333;
 $white: white;
 $black: black;
 $orange: #F36D3A;
+$red: #F05D57;
 $yellow: #D0991B;
 $light-yellow: #FDE335;
 
@@ -70,7 +71,7 @@ Top Bar
 =======
 */
 
-$menu-break-width: 770px;
+$menu-break-width: 790px;
 
 .top-bar {
 
@@ -483,7 +484,7 @@ footer {
         }
     }
 
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 710px) {
         line-height: 2em;
 
         ul {
@@ -863,4 +864,99 @@ TV
         width: 100%;
         height: 600px;
     }
+}
+
+/*
+Libros
+======
+*/
+
+.libros {
+
+  background-color: $red;
+  overflow: hidden;
+  color: white;
+  padding: 20px 0;
+  font-weight: lighter;
+
+  h2, p {
+    max-width: 900px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: lighter;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .button {
+    color: white;
+    font-size: 20px;
+    margin: 20px 0;
+
+    .fa {
+      margin-right: 5px;
+    }
+  }
+
+  .portada {
+    float: left;
+    width: 250px;
+  }
+
+  .info {
+    width: calc(100% - 270px);
+    float: right;
+  }
+
+  .extracto {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 780px) {
+    h2 {
+      font-size: 24px;
+    }
+    .button {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+    .titulo-descarga {
+      height: 170px;
+    }
+    .extracto {
+      font-size: 16px;
+    }
+    .portada {
+      width: 100px;
+      margin-right: 20px;
+    }
+    .info {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .titulo-descarga {
+      height: 220px;
+      position: relative;
+    }
+    .autor {
+      margin-top: 10px;
+    }
+    .button {
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin: 0;
+    }
+  }
 }
