@@ -7,6 +7,7 @@ $white: white;
 $black: black;
 $orange: #F36D3A;
 $red: #F05D57;
+$azul: #00A7FF;
 $yellow: #D0991B;
 $light-yellow: #FDE335;
 
@@ -873,11 +874,31 @@ Libros
 
 .libros {
 
-  background-color: $red;
-  overflow: hidden;
   color: white;
-  padding: 20px 0;
   font-weight: lighter;
+
+  .libro {
+
+    padding: 20px 0;
+    background-color: lighten(black, 10);
+    overflow: hidden;
+
+    &.rojo {
+        background-color: $red;
+    }
+
+    &.azul {
+        background-color: $azul;
+    }
+
+    &.naranja {
+        background-color: $orange;
+    }
+
+    &.gris {
+        background-color: lighten(black, 60);
+    }
+  }
 
   h2, p {
     max-width: 900px;
