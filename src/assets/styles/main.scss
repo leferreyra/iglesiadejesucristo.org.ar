@@ -72,7 +72,7 @@ Top Bar
 =======
 */
 
-$menu-break-width: 790px;
+$menu-break-width: 840px;
 
 .top-bar {
 
@@ -174,12 +174,14 @@ $menu-break-width: 790px;
         display: none;
 
         li {
-            font-size: 40px;
+            font-size: 30px;
             text-align: center;
             display: block;
 
             a {
                 color: white;
+                height: initial;
+                line-height: initial;
             }
         }
 
@@ -980,4 +982,9 @@ Libros
       margin: 0;
     }
   }
+}
+
+.english-books-title {
+    padding: 20px 0;
+    color: gray;
 }
