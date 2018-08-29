@@ -1,5 +1,5 @@
 
-var STREAM_SERVER = "http://209.133.213.93:2035/;stream/1";
+var STREAM_SERVER = "http://209.133.213.92:8004/;stream/1";
 
 var RadioPlayer = React.createClass({
 
